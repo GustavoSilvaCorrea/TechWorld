@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Eventos</title>
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+    <main class="login-page">
+        <section class="brand-panel">
+            <div class="brand">
+                <div class="brand-icon">E</div>
+                <span>TechWorld</span>
+            </div>
+
+            <div class="brand-content">
+                <span class="eyebrow">PLATAFORMA DE EVENTOS</span>
+                <h1>Conecte-se a novas experiências.</h1>
+                <p>
+                    Entre na sua conta para descobrir eventos, participar
+                    de experiências e acompanhar seu histórico.
+                </p>
+            </div>
+
+            <div class="brand-footer">
+                <span>© 2026 TechWorld</span>
+                <span>Eventos • Pessoas • Empresas</span>
+            </div>
+        </section>
+
+        <section class="form-panel">
+            <div class="login-container">
+                <div class="mobile-brand">
+                    <div class="brand-icon">E</div>
+                    <span>TechWorld</span>
+                </div>
+
+                <div class="heading">
+                    <span class="eyebrow">BEM-VINDO DE VOLTA</span>
+                    <h2>Entrar</h2>
+                    <p>Escolha o tipo de conta para continuar.</p>
+                </div>
+
+                <div class="account-switch" role="tablist" aria-label="Tipo de conta">
+                    <button class="account-option active" data-type="usuario" type="button">
+                        Usuário
+                    </button>
+                    <button class="account-option" data-type="empresa" type="button">
+                        Empresa
+                    </button>
+                </div>
+
+                <form id="loginForm">
+                    <input type="hidden" id="accountType" value="usuario">
+
+                    <div class="field">
+                        <label for="email">E-mail</label>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="seuemail@exemplo.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <div class="field-label">
+                            <label for="senha">Senha</label>
+                            <a href="#" class="forgot-link">Esqueci minha senha</a>
+                        </div>
+
+                        <div class="password-wrapper">
+                            <input
+                                id="senha"
+                                name="senha"
+                                type="password"
+                                placeholder="Digite sua senha"
+                                autocomplete="current-password"
+                                required
+                            >
+                            <button id="togglePassword" class="password-toggle" type="button" aria-label="Mostrar senha">
+                                ◉
+                            </button>
+                        </div>
+                    </div>
+
+                    <label class="remember">
+                        <input type="checkbox" id="remember">
+                        <span class="checkmark"></span>
+                        Lembrar de mim
+                    </label>
+
+                    <button class="submit-button" type="submit">
+                        <span id="submitText">Entrar como usuário</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </form>
+
+                <div class="divider">
+                    <span>ou</span>
+                </div>
+
+                <p class="register-text">
+                    Ainda não possui uma conta?
+                    <a href="#">Criar conta</a>
+                </p>
+
+                <p id="feedback" class="feedback" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="JavaScript/app.js"></script>
+</body>
+</html>
