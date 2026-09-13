@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro - TechWorld</title>
+
+    <link rel="stylesheet" href="Css/cadastro.css">
+</head>
+
+<body>
+
+    <main class="register-page">
+
+        <!-- LADO ESQUERDO -->
+        <section class="brand-panel">
+
+            <div class="brand">
+                <div class="brand-icon">T</div>
+                <span>TECHWORLD</span>
+            </div>
+
+            <div class="brand-content">
+
+                <span class="eyebrow">
+                    CRIE SUA CONTA
+                </span>
+
+                <h1>
+                    Entre para o mundo da tecnologia.
+                </h1>
+
+                <p>
+                    Crie sua conta para descobrir eventos,
+                    participar de experiências e construir
+                    sua presença na comunidade.
+                </p>
+
+            </div>
+
+            <div class="brand-footer">
+
+                <span>
+                    © 2026 TechWorld
+                </span>
+
+                <span>
+                    Eventos • Pessoas • Empresas
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- LADO DIREITO -->
+        <section class="form-panel">
+
+            <div class="register-container">
+
+                <!-- LOGO MOBILE -->
+
+                <div class="mobile-brand">
+
+                    <div class="brand-icon">
+                        T
+                    </div>
+
+                    <span>
+                        TECHWORLD
+                    </span>
+
+                </div>
+
+
+                <!-- TÍTULO -->
+
+                <div class="heading">
+
+                    <span class="eyebrow">
+                        PRIMEIRO PASSO
+                    </span>
+
+                    <h2>
+                        Criar conta
+                    </h2>
+
+                    <p>
+                        Preencha seus dados para começar.
+                    </p>
+
+                </div>
+
+
+                <!-- TIPO DE CONTA -->
+
+                <div
+                    class="account-switch"
+                    role="tablist"
+                    aria-label="Tipo de conta"
+                >
+
+                    <button
+                        class="account-option active"
+                        data-type="usuario"
+                        type="button"
+                    >
+                        Usuário
+                    </button>
+
+                    <button
+                        class="account-option"
+                        data-type="empresa"
+                        type="button"
+                    >
+                        Empresa
+                    </button>
+
+                </div>
+
+
+                <!-- FORMULÁRIO -->
+
+                <form id="registerForm">
+
+                    <input
+                        type="hidden"
+                        id="accountType"
+                        value="usuario"
+                    >
+
+
+                    <!-- NOME -->
+
+                    <div class="field">
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Seu nome completo"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CAMPOS DE USUÁRIO -->
+
+                    <div id="usuarioFields">
+
+
+                        <!-- NOME PÚBLICO -->
+
+                        <div class="field">
+
+                            <label for="nomePublico">
+                                Nome público
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nomePublico"
+                                name="nomePublico"
+                                placeholder="Como você será conhecido"
+                            >
+
+                        </div>
+
+
+                        <!-- IDADE -->
+
+                        <div class="field">
+
+                            <label for="idade">
+                                Idade
+                            </label>
+
+                            <input
+                                type="number"
+                                id="idade"
+                                name="idade"
+                                placeholder="Sua idade"
+                                min="1"
+                                max="120"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CAMPOS DA EMPRESA -->
+
+                    <div
+                        id="empresaFields"
+                        class="hidden"
+                    >
+
+                        <div class="field">
+
+                            <label for="tipoEmpresa">
+                                Tipo de empresa
+                            </label>
+
+                            <select
+                                id="tipoEmpresa"
+                                name="tipoEmpresa"
+                            >
+
+                                <option value="">
+                                    Selecione o tipo
+                                </option>
+
+                                <option value="startup">
+                                    Startup
+                                </option>
+
+                                <option value="tecnologia">
+                                    Tecnologia
+                                </option>
+
+                                <option value="educacao">
+                                    Educação
+                                </option>
+
+                                <option value="industria">
+                                    Indústria
+                                </option>
+
+                                <option value="outro">
+                                    Outro
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="biografiaEmpresa">
+                                Sobre a empresa
+                            </label>
+
+                            <textarea
+                                id="biografiaEmpresa"
+                                name="biografiaEmpresa"
+                                placeholder="Conte um pouco sobre sua empresa"
+                                rows="4"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOGIN -->
+
+                    <div class="field">
+
+                        <label for="login">
+                            Login
+                        </label>
+
+                        <input
+                            type="text"
+                            id="login"
+                            name="login"
+                            placeholder="Escolha um nome de usuário"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="field">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="seuemail@exemplo.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- SENHA -->
+
+                    <div class="field">
+
+                        <label for="senha">
+                            Senha
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="senha"
+                                name="senha"
+                                placeholder="Crie uma senha"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="password-toggle"
+                            >
+                                ◉
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIRMAR SENHA -->
+
+                    <div class="field">
+
+                        <label for="confirmarSenha">
+                            Confirmar senha
+                        </label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="confirmarSenha"
+                                name="confirmarSenha"
+                                placeholder="Digite a senha novamente"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="toggleConfirmPassword"
+                                class="password-toggle"
+                            >
+                                ◉
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TERMOS -->
+
+                    <label class="terms">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required
+                        >
+
+                        <span class="checkmark"></span>
+
+                        <span>
+                            Eu concordo com os
+                            <a href="#">
+                                termos de uso
+                            </a>
+                            e a
+                            <a href="#">
+                                política de privacidade
+                            </a>.
+                        </span>
+
+                    </label>
+
+
+                    <!-- BOTÃO -->
+
+                    <button
+                        class="submit-button"
+                        type="submit"
+                    >
+
+                        <span id="submitText">
+                            Criar conta
+                        </span>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- DIVISOR -->
+
+                <div class="divider">
+                    <span>já possui uma conta?</span>
+                </div>
+
+
+                <!-- LOGIN -->
+
+                <p class="login-text">
+
+                    <a href="index.html">
+                        Entrar na minha conta
+                    </a>
+
+                </p>
+
+
+                <p
+                    id="feedback"
+                    class="feedback"
+                ></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="JavaScript/cadastro.js"></script>
+
+</body>
+</html>
