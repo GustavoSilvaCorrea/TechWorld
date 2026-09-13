@@ -1,0 +1,867 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+
+:root {
+
+    --bg: #09090b;
+
+    --surface: #111114;
+
+    --surface-2: #18181c;
+
+    --border: #29292f;
+
+    --text: #f6f6f7;
+
+    --muted: #96969f;
+
+    --accent: #f0b35a;
+
+    --input: #0f0f12;
+
+}
+
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 12% 20%,
+            rgba(240, 179, 90, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 78%,
+            rgba(255,255,255,0.04),
+            transparent 24%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: "DM Sans", sans-serif;
+
+}
+
+
+button,
+input,
+select,
+textarea {
+
+    font: inherit;
+
+}
+
+
+button {
+
+    border: 0;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+.register-page {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+}
+
+
+/* --------------------------------
+   LADO ESQUERDO
+-------------------------------- */
+
+.brand-panel {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 48px 64px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    border-right: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            140deg,
+            rgba(240, 179, 90, 0.07),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            #0c0c0f 0%,
+            #09090b 100%
+        );
+
+}
+
+
+.brand-panel::before,
+.brand-panel::after {
+
+    content: "";
+
+    position: absolute;
+
+    border: 1px solid rgba(240,179,90,0.13);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+.brand-panel::before {
+
+    width: 520px;
+
+    height: 520px;
+
+    left: -240px;
+
+    top: 16%;
+
+}
+
+
+.brand-panel::after {
+
+    width: 340px;
+
+    height: 340px;
+
+    right: -180px;
+
+    bottom: -80px;
+
+}
+
+
+.brand {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.brand-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 11px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--accent);
+
+    color: #17120b;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 30px rgba(240,179,90,0.18);
+
+}
+
+
+.brand-content {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 610px;
+
+    margin-top: -40px;
+
+}
+
+
+.eyebrow {
+
+    display: inline-block;
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+}
+
+
+.brand-content h1 {
+
+    max-width: 570px;
+
+    margin-top: 16px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(46px, 5.4vw, 78px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+
+}
+
+
+.brand-content p {
+
+    max-width: 520px;
+
+    margin-top: 24px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+.brand-footer {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #66666f;
+
+    font-size: 12px;
+
+}
+
+
+/* --------------------------------
+   LADO DO FORMULÁRIO
+-------------------------------- */
+
+.form-panel {
+
+    display: grid;
+
+    place-items: center;
+
+    padding: 40px 32px;
+
+    background: rgba(10,10,13,0.72);
+
+}
+
+
+.register-container {
+
+    width: min(100%, 430px);
+
+    padding: 20px 0;
+
+}
+
+
+.mobile-brand {
+
+    display: none;
+
+}
+
+
+.heading h2 {
+
+    margin-top: 10px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 42px;
+
+    letter-spacing: -0.04em;
+
+}
+
+
+.heading p {
+
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+/* --------------------------------
+   SELETOR USUARIO / EMPRESA
+-------------------------------- */
+
+.account-switch {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 28px;
+
+    padding: 4px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: var(--surface);
+
+}
+
+
+.account-option {
+
+    min-height: 44px;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.22s ease;
+
+}
+
+
+.account-option:hover {
+
+    color: var(--text);
+
+}
+
+
+.account-option.active {
+
+    background: var(--surface-2);
+
+    color: var(--text);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(240,179,90,0.14);
+
+}
+
+
+/* --------------------------------
+   FORM
+-------------------------------- */
+
+form {
+
+    margin-top: 26px;
+
+}
+
+
+.field {
+
+    margin-top: 17px;
+
+}
+
+
+.field label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #dcdce1;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.field input,
+.field select,
+.field textarea {
+
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: var(--input);
+
+    color: var(--text);
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+
+}
+
+
+.field input,
+.field select {
+
+    height: 50px;
+
+    padding: 0 15px;
+
+}
+
+
+.field textarea {
+
+    padding: 14px 15px;
+
+    min-height: 105px;
+
+    resize: vertical;
+
+}
+
+
+.field input::placeholder,
+.field textarea::placeholder {
+
+    color: #5f5f68;
+
+}
+
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+
+    border-color: rgba(240,179,90,0.65);
+
+    box-shadow:
+        0 0 0 4px rgba(240,179,90,0.08);
+
+}
+
+
+.field select {
+
+    appearance: none;
+
+    cursor: pointer;
+
+}
+
+
+/* --------------------------------
+   SENHA
+-------------------------------- */
+
+.password-wrapper {
+
+    position: relative;
+
+}
+
+
+.password-wrapper input {
+
+    padding-right: 52px;
+
+}
+
+
+.password-toggle {
+
+    position: absolute;
+
+    top: 50%;
+
+    right: 14px;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #777781;
+
+    cursor: pointer;
+
+}
+
+
+.password-toggle:hover {
+
+    background: var(--surface-2);
+
+    color: var(--text);
+
+}
+
+
+/* --------------------------------
+   TERMOS
+-------------------------------- */
+
+.terms {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    cursor: pointer;
+
+}
+
+
+.terms input {
+
+    display: none;
+
+}
+
+
+.checkmark {
+
+    flex-shrink: 0;
+
+    width: 16px;
+
+    height: 16px;
+
+    margin-top: 1px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    background: var(--input);
+
+}
+
+
+.terms input:checked + .checkmark {
+
+    border-color: var(--accent);
+
+    background: var(--accent);
+
+    box-shadow:
+        inset 0 0 0 3px var(--input);
+
+}
+
+
+.terms a {
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+}
+
+
+/* --------------------------------
+   BOTÃO
+-------------------------------- */
+
+.submit-button {
+
+    width: 100%;
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 23px;
+
+    padding: 0 18px;
+
+    border-radius: 12px;
+
+    background: var(--accent);
+
+    color: #16120b;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+
+}
+
+
+.submit-button:hover {
+
+    background: #f4bd69;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 12px 24px rgba(240,179,90,0.12);
+
+}
+
+
+.arrow {
+
+    font-size: 20px;
+
+}
+
+
+/* --------------------------------
+   DIVISOR
+-------------------------------- */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0 18px;
+
+    color: #54545d;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background: var(--border);
+
+}
+
+
+.login-text {
+
+    text-align: center;
+
+    font-size: 13px;
+
+}
+
+
+.login-text a {
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+}
+
+
+.feedback {
+
+    min-height: 18px;
+
+    margin-top: 13px;
+
+    color: var(--accent);
+
+    text-align: center;
+
+    font-size: 12px;
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* --------------------------------
+   RESPONSIVO
+-------------------------------- */
+
+@media (max-width: 900px) {
+
+    .register-page {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .brand-panel {
+
+        display: none;
+
+    }
+
+
+    .form-panel {
+
+        min-height: 100vh;
+
+        padding: 25px 20px;
+
+    }
+
+
+    .mobile-brand {
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 11px;
+
+        margin-bottom: 45px;
+
+        font-family: "Space Grotesk", sans-serif;
+
+        font-weight: 700;
+
+        letter-spacing: 0.12em;
+
+    }
+
+
+    .mobile-brand .brand-icon {
+
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 17px;
+
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .form-panel {
+
+        padding: 20px 16px;
+
+    }
+
+
+    .heading h2 {
+
+        font-size: 36px;
+
+    }
+
+}
