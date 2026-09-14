@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do evento - TechWorld</title>
+    <link rel="stylesheet" href="Css/detalhes-evento.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="home.html" class="logo"><div class="logo-icon">T</div><span>TECHWORLD</span></a>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">Início</a>
+                <a href="eventos.html" class="nav-link">Eventos</a>
+                <a href="meus-eventos.html" class="nav-link active">Meus eventos</a>
+                <a href="eventos.html" class="nav-link">Explorar</a>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <button class="notification-button" type="button" aria-label="Notificações">●</button>
+            <button class="profile-button" type="button" id="profileButton" aria-expanded="false"><img src="https://i.pravatar.cc/100?img=12" alt="Foto de perfil" class="profile-image"><div class="profile-info"><strong>Gustavo Silva</strong><span>Usuário</span></div><span class="profile-arrow">▾</span></button>
+            <div class="profile-menu" id="profileMenu"><a href="#">Meu perfil</a><a href="#">Configurações</a><button type="button">Sair</button></div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <a href="meus-eventos.html" class="back-link">← Voltar para meus eventos</a>
+        <section class="event-hero" id="eventHero"></section>
+        <section class="content-layout">
+            <div class="main-column">
+                <section class="content-section">
+                    <span class="eyebrow">SOBRE O EVENTO</span>
+                    <h2>Detalhes</h2>
+                    <p class="long-description" id="eventDescription"></p>
+                </section>
+                <section class="content-section schedule-section">
+                    <div class="section-heading"><div><span class="eyebrow">PROGRAMAÇÃO</span><h2>Horários e atividades</h2></div><span class="date-chip" id="scheduleDate"></span></div>
+                    <div class="schedule-list" id="scheduleList"></div>
+                </section>
+                <section class="content-section tournament-section hidden" id="tournamentSection">
+                    <div class="section-heading"><div><span class="eyebrow">TORNEIO</span><h2>Ranking atual</h2></div><span class="ranking-status" id="rankingStatus"></span></div>
+                    <div class="ranking-list" id="rankingList"></div>
+                </section>
+            </div>
+            <aside class="side-column" id="sideInfo"></aside>
+        </section>
+    </main>
+    <script src="JavaScript/detalhes-evento.js"></script>
+</body>
+</html>

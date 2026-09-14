@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus eventos - TechWorld</title>
+    <link rel="stylesheet" href="Css/meus-eventos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="home.html" class="logo"><div class="logo-icon">T</div><span>TECHWORLD</span></a>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">Início</a>
+                <a href="eventos.html" class="nav-link">Eventos</a>
+                <a href="meus-eventos.html" class="nav-link active">Meus eventos</a>
+                <a href="eventos.html" class="nav-link">Explorar</a>
+            </div>
+        </div>
+        <div class="navbar-right">
+            <button class="notification-button" type="button" aria-label="Notificações">●</button>
+            <button class="profile-button" type="button" id="profileButton" aria-expanded="false">
+                <img src="https://i.pravatar.cc/100?img=12" alt="Foto de perfil" class="profile-image">
+                <div class="profile-info"><strong>Gustavo Silva</strong><span>Usuário</span></div>
+                <span class="profile-arrow">▾</span>
+            </button>
+            <div class="profile-menu" id="profileMenu">
+                <a href="#">Meu perfil</a><a href="#">Configurações</a><button type="button">Sair</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="page-heading">
+            <div>
+                <span class="eyebrow">SUA JORNADA</span>
+                <h1>Meus eventos</h1>
+                <p>Acompanhe os eventos que fazem parte da sua agenda.</p>
+            </div>
+            <a class="explore-button" href="eventos.html"><span>Explorar eventos</span><span>→</span></a>
+        </section>
+
+        <section class="stats-grid" aria-label="Resumo dos seus eventos">
+            <article class="stat-card"><span class="stat-label">PRÓXIMOS EVENTOS</span><strong id="upcomingCount">0</strong><p>confirmados na sua agenda</p></article>
+            <article class="stat-card"><span class="stat-label">EVENTOS PARTICIPADOS</span><strong id="completedCount">0</strong><p>experiências concluídas</p></article>
+            <article class="stat-card highlight"><span class="stat-label">PRÓXIMO EVENTO</span><strong id="nextEventDate">--</strong><p id="nextEventName">Carregando agenda...</p></article>
+        </section>
+
+        <section class="featured-section" id="nextEvent"></section>
+
+        <section class="events-section">
+            <div class="section-header">
+                <div><span class="eyebrow">CONFIRMADOS</span><h2>Na sua agenda</h2></div>
+                <span class="section-note">Você está inscrito</span>
+            </div>
+            <div class="event-grid" id="upcomingEvents"></div>
+        </section>
+
+        <section class="events-section history-section">
+            <div class="section-header">
+                <div><span class="eyebrow">HISTÓRICO</span><h2>Eventos realizados</h2></div>
+                <span class="section-note">Suas experiências</span>
+            </div>
+            <div class="history-list" id="pastEvents"></div>
+        </section>
+    </main>
+    <script src="JavaScript/meus-eventos.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - TechWorld</title>
+    <link rel="stylesheet" href="Css/eventos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="home.html" class="logo">
+                <div class="logo-icon">T</div>
+                <span>TECHWORLD</span>
+            </a>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">Início</a>
+                <a href="eventos.html" class="nav-link active">Eventos</a>
+                <a href="meus-eventos.html" class="nav-link">Meus eventos</a>
+                <a href="eventos.html" class="nav-link">Explorar</a>
+            </div>
+        </div>
+
+        <div class="navbar-right">
+            <button class="notification-button" type="button" aria-label="Notificações">●</button>
+
+            <button class="profile-button" type="button" id="profileButton">
+                <img src="https://i.pravatar.cc/100?img=12" alt="Foto de perfil" class="profile-image">
+                <div class="profile-info">
+                    <strong>Gustavo Silva</strong>
+                    <span>Usuário</span>
+                </div>
+                <span class="profile-arrow">▾</span>
+            </button>
+
+            <div class="profile-menu" id="profileMenu">
+                <a href="#">Meu perfil</a>
+                <a href="#">Configurações</a>
+                <button type="button">Sair</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="page-heading">
+            <div>
+                <span class="eyebrow">DESCUBRA NOVAS EXPERIÊNCIAS</span>
+                <h1>Eventos</h1>
+                <p>Encontre eventos em que você ainda pode se inscrever.</p>
+            </div>
+        </section>
+
+        <section class="search-area">
+            <div class="search-box">
+                <span class="search-icon">⌕</span>
+                <input id="searchInput" type="search" placeholder="Pesquise por evento, tema ou empresa...">
+                <button id="clearSearch" class="clear-search" type="button">×</button>
+            </div>
+            <button id="mobileFilterButton" class="mobile-filter-button" type="button">Filtros</button>
+        </section>
+
+        <section class="content-layout">
+            <aside class="filters" id="filtersPanel">
+                <div class="filters-header">
+                    <div>
+                        <span class="eyebrow">ENCONTRE SEU EVENTO</span>
+                        <h2>Filtros</h2>
+                    </div>
+                    <button id="clearFilters" type="button" class="clear-filters">Limpar</button>
+                </div>
+
+                <div class="filter-group">
+                    <label>Categoria</label>
+                    <label class="check-option"><input type="checkbox" value="Tecnologia" class="category-filter"><span class="box"></span>Tecnologia</label>
+                    <label class="check-option"><input type="checkbox" value="Programação" class="category-filter"><span class="box"></span>Programação</label>
+                    <label class="check-option"><input type="checkbox" value="Inteligência Artificial" class="category-filter"><span class="box"></span>Inteligência Artificial</label>
+                    <label class="check-option"><input type="checkbox" value="Games" class="category-filter"><span class="box"></span>Games</label>
+                    <label class="check-option"><input type="checkbox" value="Startups" class="category-filter"><span class="box"></span>Startups</label>
+                    <label class="check-option"><input type="checkbox" value="Inovação" class="category-filter"><span class="box"></span>Inovação</label>
+                </div>
+
+                <div class="filter-group">
+                    <label for="dateFilter">Quando</label>
+                    <select id="dateFilter">
+                        <option value="todos">Qualquer data</option>
+                        <option value="7">Próximos 7 dias</option>
+                        <option value="30">Próximos 30 dias</option>
+                        <option value="90">Próximos 3 meses</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="locationFilter">Localização</label>
+                    <select id="locationFilter">
+                        <option value="todos">Todos os locais</option>
+                        <option value="online">Online</option>
+                        <option value="sao-paulo">São Paulo</option>
+                        <option value="rio">Rio de Janeiro</option>
+                        <option value="bh">Belo Horizonte</option>
+                        <option value="curitiba">Curitiba</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="priceFilter">Preço</label>
+                    <select id="priceFilter">
+                        <option value="todos">Todos</option>
+                        <option value="gratuito">Gratuitos</option>
+                        <option value="pago">Pagos</option>
+                    </select>
+                </div>
+            </aside>
+
+            <section class="events-area">
+                <div class="results-header">
+                    <div>
+                        <strong id="resultsCount">0 eventos encontrados</strong>
+                        <span>Ordenados por relevância</span>
+                    </div>
+                    <div class="sort-wrapper">
+                        <label for="sortFilter">Ordenar:</label>
+                        <select id="sortFilter">
+                            <option value="relevancia">Relevância</option>
+                            <option value="data">Data mais próxima</option>
+                            <option value="titulo">Nome do evento</option>
+                            <option value="preco">Menor preço</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="event-grid" id="eventsGrid"></div>
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">⌕</div>
+                    <h3>Nenhum evento encontrado</h3>
+                    <p>Tente mudar a pesquisa ou remover alguns filtros.</p>
+                    <button type="button" id="emptyClearButton">Limpar filtros</button>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- MODAL DE INSCRIÇÃO -->
+    <div class="modal-overlay" id="registrationModal" aria-hidden="true">
+        <div class="registration-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="closeModal" type="button" aria-label="Fechar">×</button>
+
+            <div class="modal-top">
+                <span class="eyebrow">INSCRIÇÃO NO EVENTO</span>
+                <h2 id="modalTitle">Evento</h2>
+                <p id="modalDescription">Confira os dados antes de confirmar sua inscrição.</p>
+            </div>
+
+            <div class="selected-event">
+                <img id="modalImage" src="" alt="">
+                <div>
+                    <span id="modalCategory" class="modal-category"></span>
+                    <h3 id="modalEventName"></h3>
+                    <div class="selected-event-meta">
+                        <span id="modalDate"></span>
+                        <span id="modalLocation"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="registration-step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    <div>
+                        <strong>Dados da inscrição</strong>
+                        <small>Utilizaremos os dados da sua conta.</small>
+                    </div>
+                </div>
+
+                <div class="modal-fields">
+                    <div class="modal-field">
+                        <label for="modalUserName">Nome</label>
+                        <input id="modalUserName" type="text" value="Gustavo Silva">
+                    </div>
+                    <div class="modal-field">
+                        <label for="modalUserEmail">E-mail</label>
+                        <input id="modalUserEmail" type="email" value="gustavo@exemplo.com">
+                    </div>
+                </div>
+            </div>
+
+            <div class="registration-step" id="paymentStep">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    <div>
+                        <strong>Pagamento</strong>
+                        <small id="paymentSubtitle">Escolha uma forma de pagamento.</small>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <button class="payment-method active" type="button" data-payment="pix">
+                        <span class="payment-icon">◆</span>
+                        <span><strong>Pix</strong><small>Aprovação rápida</small></span>
+                    </button>
+                    <button class="payment-method" type="button" data-payment="card">
+                        <span class="payment-icon">▣</span>
+                        <span><strong>Cartão</strong><small>Crédito</small></span>
+                    </button>
+                </div>
+
+                <div id="pixPanel" class="payment-panel">
+                    <div class="pix-message">
+                        <div class="pix-symbol">◇</div>
+                        <div>
+                            <strong>Pagamento via Pix</strong>
+                            <p>Após confirmar, será gerado o pagamento do pedido.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cardPanel" class="payment-panel hidden">
+                    <div class="modal-fields">
+                        <div class="modal-field full">
+                            <label for="cardNumber">Número do cartão</label>
+                            <input id="cardNumber" type="text" placeholder="0000 0000 0000 0000" maxlength="19">
+                        </div>
+                        <div class="modal-field">
+                            <label for="cardName">Nome no cartão</label>
+                            <input id="cardName" type="text" placeholder="Nome completo">
+                        </div>
+                        <div class="modal-field small-field">
+                            <label for="cardExpiry">Validade</label>
+                            <input id="cardExpiry" type="text" placeholder="MM/AA" maxlength="5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="free-registration hidden" id="freeRegistration">
+                <span class="free-icon">✓</span>
+                <div>
+                    <strong>Este evento é gratuito.</strong>
+                    <p>Não será necessário realizar nenhum pagamento.</p>
+                </div>
+            </div>
+
+            <div class="modal-summary">
+                <span>Total</span>
+                <strong id="modalPrice">R$ 0,00</strong>
+            </div>
+
+            <button class="confirm-button" id="confirmRegistration" type="button">
+                Confirmar inscrição
+                <span>→</span>
+            </button>
+
+            <p class="modal-security">🔒 Seus dados de pagamento são tratados com segurança. Esta tela é apenas uma simulação visual.</p>
+            <p id="registrationFeedback" class="registration-feedback"></p>
+        </div>
+    </div>
+
+    <!-- MODAL DE SUCESSO -->
+    <div class="modal-overlay" id="successModal" aria-hidden="true">
+        <div class="success-modal" role="dialog" aria-modal="true">
+            <div class="success-icon">✓</div>
+            <span class="eyebrow">INSCRIÇÃO REALIZADA</span>
+            <h2>Você está inscrito!</h2>
+            <p id="successText">Sua inscrição foi registrada com sucesso.</p>
+            <button id="closeSuccess" class="confirm-button" type="button">Continuar</button>
+        </div>
+    </div>
+
+    <script src="JavaScript/eventos.js"></script>
+</body>
+</html>
