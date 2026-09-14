@@ -46,8 +46,10 @@ loginForm.addEventListener("submit", (event) => {
     const type = accountType.value;
     const email = document.getElementById("email").value.trim();
 
-    // Apenas visual por enquanto.
-    // Futuramente aqui pode entrar o fetch() para o Node.js.
     feedback.textContent =
         `Login de ${type === "empresa" ? "empresa" : "usuário"} preparado para ${email}.`;
+
+    setTimeout(() => {
+        window.location.href = "home.html";
+    }, 500);
 });
