@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu perfil - TechWorld</title>
+    <link rel="stylesheet" href="Css/perfil.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-left">
+        <a href="#" class="logo">
+            <div class="logo-icon">T</div>
+            <span>TECHWORLD</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#" class="nav-link">Início</a>
+            <a href="#" class="nav-link">Eventos</a>
+            <a href="#" class="nav-link">Meus eventos</a>
+            <a href="#" class="nav-link active">Meu perfil</a>
+        </div>
+    </div>
+
+    <div class="navbar-right">
+        <button class="notification-button" type="button">●</button>
+        <button class="profile-button" type="button" id="profileButton">
+            <img src="https://i.pravatar.cc/100?img=12" alt="Foto de perfil">
+            <div class="profile-info">
+                <strong>Gustavo Silva</strong>
+                <span>Usuário</span>
+            </div>
+            <span>▾</span>
+        </button>
+
+        <div class="profile-menu" id="profileMenu">
+            <a href="#">Meu perfil</a>
+            <a href="#settings">Configurações</a>
+            <button type="button">Sair</button>
+        </div>
+    </div>
+</nav>
+
+<main class="main-content">
+
+    <section class="profile-hero">
+        <div class="cover-glow"></div>
+
+        <div class="profile-main">
+            <div class="avatar-wrap">
+                <img id="profilePhotoPreview" src="https://i.pravatar.cc/160?img=12" alt="Foto de perfil">
+                <label class="avatar-edit" for="profilePhoto">✎</label>
+                <input id="profilePhoto" type="file" accept="image/*" hidden>
+            </div>
+
+            <div class="profile-title">
+                <span class="eyebrow">PERFIL DO USUÁRIO</span>
+                <h1 id="profileNamePreview">Gustavo Silva</h1>
+                <p id="profileUsernamePreview">@gustavosilva · Membro desde 2026</p>
+
+                <div class="profile-stats">
+                    <div><strong>12</strong><span>eventos</span></div>
+                    <div><strong>8</strong><span>concluídos</span></div>
+                    <div><strong>6</strong><span>emblemas</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-grid">
+
+        <section class="content-column">
+
+            <div class="content-card">
+                <div class="card-heading">
+                    <div>
+                        <span class="eyebrow">SEUS DADOS</span>
+                        <h2>Informações pessoais</h2>
+                    </div>
+                </div>
+
+                <form id="profileForm">
+
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="fullName">Nome completo</label>
+                            <input id="fullName" type="text" value="Gustavo Silva">
+                        </div>
+
+                        <div class="field">
+                            <label for="username">Nome de usuário</label>
+                            <input id="username" type="text" value="@gustavosilva">
+                        </div>
+
+                        <div class="field">
+                            <label for="birthDate">Data de nascimento</label>
+                            <input id="birthDate" type="date" value="2004-06-18">
+                        </div>
+
+                        <div class="field">
+                            <label for="email">E-mail principal</label>
+                            <input id="email" type="email" value="gustavo@exemplo.com">
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Telefone</label>
+                            <input id="phone" type="tel" value="(11) 99999-0000">
+                        </div>
+
+                        <div class="field">
+                            <label for="website">Site pessoal</label>
+                            <input id="website" type="url" value="https://gustavo.dev">
+                        </div>
+
+                        <div class="field full">
+                            <label for="bio">Biografia</label>
+                            <textarea id="bio" rows="4">Desenvolvedor apaixonado por tecnologia, programação e inovação.</textarea>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <span id="saveFeedback" class="save-feedback"></span>
+                        <button class="primary-button" type="submit">Salvar alterações</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="content-card">
+                <div class="card-heading">
+                    <div>
+                        <span class="eyebrow">CONTATOS</span>
+                        <h2>Telefone e redes sociais</h2>
+                    </div>
+                    <button class="ghost-button" type="button" id="addSocial">+ Adicionar</button>
+                </div>
+
+                <div class="contact-list" id="contactList">
+                    <div class="contact-row">
+                        <div class="contact-icon">✉</div>
+                        <div class="contact-content">
+                            <strong>gustavo@exemplo.com</strong>
+                            <span>E-mail principal</span>
+                        </div>
+                        <button class="row-button" type="button">Editar</button>
+                    </div>
+
+                    <div class="contact-row">
+                        <div class="contact-icon">☎</div>
+                        <div class="contact-content">
+                            <strong>(11) 99999-0000</strong>
+                            <span>Telefone</span>
+                        </div>
+                        <button class="row-button" type="button">Editar</button>
+                    </div>
+
+                    <div class="contact-row">
+                        <div class="contact-icon">in</div>
+                        <div class="contact-content">
+                            <strong>linkedin.com/in/gustavosilva</strong>
+                            <span>LinkedIn</span>
+                        </div>
+                        <button class="row-button" type="button">Editar</button>
+                    </div>
+
+                    <div class="contact-row">
+                        <div class="contact-icon">GH</div>
+                        <div class="contact-content">
+                            <strong>github.com/gustavosilva</strong>
+                            <span>GitHub</span>
+                        </div>
+                        <button class="row-button" type="button">Editar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="card-heading">
+                    <div>
+                        <span class="eyebrow">LOCALIZAÇÃO</span>
+                        <h2>Onde você está</h2>
+                    </div>
+                </div>
+
+                <div class="location-grid">
+                    <div class="field">
+                        <label for="country">País</label>
+                        <select id="country">
+                            <option>Brasil</option>
+                            <option>Portugal</option>
+                            <option>Argentina</option>
+                            <option>Estados Unidos</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="state">Estado</label>
+                        <select id="state">
+                            <option>São Paulo</option>
+                            <option>Rio de Janeiro</option>
+                            <option>Minas Gerais</option>
+                            <option>Paraná</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="city">Cidade</label>
+                        <input id="city" type="text" value="São Paulo">
+                    </div>
+
+                    <div class="field">
+                        <label for="zip">CEP</label>
+                        <input id="zip" type="text" value="01000-000">
+                    </div>
+                </div>
+
+                <div class="location-note">
+                    <span>⌖</span>
+                    <p>Esses dados podem ser usados para recomendar eventos presenciais próximos a você.</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="card-heading">
+                    <div>
+                        <span class="eyebrow">INTERESSES</span>
+                        <h2>O que você gosta</h2>
+                    </div>
+                    <button class="ghost-button" type="button" id="editInterests">Editar interesses</button>
+                </div>
+
+                <div class="interest-list" id="interestList">
+                    <span class="interest active">Tecnologia</span>
+                    <span class="interest active">Programação</span>
+                    <span class="interest active">Inteligência Artificial</span>
+                    <span class="interest active">Games</span>
+                    <span class="interest active">Startups</span>
+                    <span class="interest">Cloud</span>
+                    <span class="interest">UX/UI</span>
+                    <span class="interest">Cibersegurança</span>
+                </div>
+            </div>
+
+            <div class="content-card" id="settings">
+                <div class="card-heading">
+                    <div>
+                        <span class="eyebrow">PREFERÊNCIAS</span>
+                        <h2>Configurações do site</h2>
+                    </div>
+                </div>
+
+                <div class="settings-list">
+                    <div class="setting-row">
+                        <div>
+                            <strong>Receber recomendações por e-mail</strong>
+                            <span>Eventos baseados nos seus interesses.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-row">
+                        <div>
+                            <strong>Notificações de eventos</strong>
+                            <span>Lembretes sobre seus próximos eventos.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-row">
+                        <div>
+                            <strong>Mostrar meu perfil publicamente</strong>
+                            <span>Permite que outros usuários encontrem seu perfil.</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-row">
+                        <div>
+                            <strong>Idioma</strong>
+                            <span>Idioma da interface do TechWorld.</span>
+                        </div>
+                        <select class="small-select">
+                            <option>Português (Brasil)</option>
+                            <option>English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card danger-card">
+                <div>
+                    <span class="eyebrow danger-eyebrow">ZONA DE SEGURANÇA</span>
+                    <h2>Conta</h2>
+                    <p>Ações que afetam permanentemente sua conta.</p>
+                </div>
+
+                <div class="danger-actions">
+                    <button class="danger-button" type="button">Alterar senha</button>
+                    <button class="danger-button outline" type="button">Excluir conta</button>
+                </div>
+            </div>
+
+        </section>
+
+        <aside class="side-column">
+
+            <div class="content-card badges-card">
+                <div class="card-heading">
+                    <div>
+                        <span class="eyebrow">CONQUISTAS</span>
+                        <h2>Seus emblemas</h2>
+                    </div>
+                    <span class="badge-count">6</span>
+                </div>
+
+                <div class="badges-grid" id="badgesGrid">
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">⚡</div>
+                        <strong>Primeiro evento</strong>
+                        <span>Participou do seu primeiro evento.</span>
+                    </div>
+
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">🏆</div>
+                        <strong>Top 10</strong>
+                        <span>Ficou entre os 10 primeiros.</span>
+                    </div>
+
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">◆</div>
+                        <strong>Maratonista</strong>
+                        <span>Concluiu 5 eventos.</span>
+                    </div>
+
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">★</div>
+                        <strong>Competidor</strong>
+                        <span>Participou de um desafio.</span>
+                    </div>
+
+                    <div class="badge-card unlocked">
+                        <div class="badge-icon">∞</div>
+                        <strong>Explorador</strong>
+                        <span>Visitou 3 categorias.</span>
+                    </div>
+
+                    <div class="badge-card locked">
+                        <div class="badge-icon">?</div>
+                        <strong>Top 3</strong>
+                        <span>Conquiste uma posição no pódio.</span>
+                    </div>
+                </div>
+
+                <button class="wide-ghost-button" type="button" id="showAllBadges">Ver todas as conquistas</button>
+            </div>
+
+            <div class="content-card summary-card">
+                <div class="card-heading">
+                    <div>
+                        <span class="eyebrow">RESUMO</span>
+                        <h2>Seu desempenho</h2>
+                    </div>
+                </div>
+
+                <div class="summary-bars">
+                    <div class="metric">
+                        <div><span>Eventos concluídos</span><strong>8 / 12</strong></div>
+                        <div class="progress"><i style="width: 67%"></i></div>
+                    </div>
+
+                    <div class="metric">
+                        <div><span>Média no ranking</span><strong>8,4º</strong></div>
+                        <div class="progress"><i style="width: 74%"></i></div>
+                    </div>
+
+                    <div class="metric">
+                        <div><span>Participação</span><strong>92%</strong></div>
+                        <div class="progress"><i style="width: 92%"></i></div>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal-overlay" id="interestsModal" aria-hidden="true">
+    <div class="simple-modal">
+        <button class="modal-close" id="closeInterests" type="button">×</button>
+        <span class="eyebrow">SEUS INTERESSES</span>
+        <h2>Editar interesses</h2>
+        <p>Selecione os assuntos que ajudam o TechWorld a recomendar eventos para você.</p>
+
+        <div class="interest-picker">
+            <button class="pick-interest selected" type="button">Tecnologia</button>
+            <button class="pick-interest selected" type="button">Programação</button>
+            <button class="pick-interest selected" type="button">IA</button>
+            <button class="pick-interest selected" type="button">Games</button>
+            <button class="pick-interest selected" type="button">Startups</button>
+            <button class="pick-interest" type="button">Cloud</button>
+            <button class="pick-interest" type="button">UX/UI</button>
+            <button class="pick-interest" type="button">Cibersegurança</button>
+            <button class="pick-interest" type="button">Hardware</button>
+            <button class="pick-interest" type="button">Robótica</button>
+        </div>
+
+        <button class="primary-button wide" id="saveInterests" type="button">Salvar interesses</button>
+    </div>
+</div>
+
+<script src="JavaScript/perfil.js"></script>
+</body>
+</html>
