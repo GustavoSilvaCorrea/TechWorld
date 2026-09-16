@@ -50,6 +50,10 @@ loginForm.addEventListener("submit", (event) => {
         `Login de ${type === "empresa" ? "empresa" : "usuário"} preparado para ${email}.`;
 
     setTimeout(() => {
-        window.location.href = "home.html";
+        if (type === "empresa") {
+            window.location.href = "empresa-home.html";
+        } else {
+            window.location.href = "home.html";
+        }
     }, 500);
 });
