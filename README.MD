@@ -37,3 +37,10 @@ O projeto busca permitir:
 * patrocinadores;
 
 ---
+
+# 4. Como acessar o projeto?
+
+Para acessar o projeto é apenas necessário entrar no link:
+https://techworldgoated.netlify.app/
+
+---
