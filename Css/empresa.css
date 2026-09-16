@@ -1,0 +1,756 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+    --bg: #09090b;
+    --card: #111114;
+    --card2: #18181c;
+    --border: #29292f;
+    --text: #f6f6f7;
+    --muted: #96969f;
+    --gold: #f0b35a;
+    --green: #7bd8a5
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 85% 5%, rgba(240, 179, 90, .08), transparent 25%), var(--bg);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+button {
+    font: inherit
+}
+
+.navbar {
+    height: 76px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(9, 9, 11, .94);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border)
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font: 700 14px "Space Grotesk";
+    letter-spacing: .12em
+}
+
+.logo-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: var(--gold);
+    color: #17120b;
+    display: grid;
+    place-items: center
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    margin-right: auto;
+    margin-left: 30px
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--text)
+}
+
+.nav-links .active {
+    position: relative
+}
+
+.nav-links .active:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    height: 2px;
+    background: var(--gold)
+}
+
+.profile {
+    position: relative
+}
+
+.profile>button {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: none;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+    font-size: 12px;
+    border: 0
+}
+
+.profile small {
+    color: var(--muted);
+    font-size: 10px
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    border: 1px solid rgba(240, 179, 90, .25);
+    background: rgba(240, 179, 90, .1);
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    font-weight: 700
+}
+
+.profile #profileMenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 190px;
+    padding: 7px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px
+}
+
+.profile #profileMenu.open {
+    display: block
+}
+
+.profile #profileMenu a {
+    display: block;
+    padding: 11px 12px;
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 12px
+}
+
+.profile #profileMenu a:hover {
+    background: var(--card2);
+    color: var(--text)
+}
+
+main {
+    width: min(1400px, 90%);
+    margin: auto;
+    padding: 58px 0 85px
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    padding-bottom: 34px
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .16em
+}
+
+.hero h1 {
+    font: 700 clamp(36px, 4vw, 53px) "Space Grotesk";
+    letter-spacing: -.045em;
+    margin-top: 11px
+}
+
+.hero p {
+    max-width: 680px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 14px
+}
+
+.primary,
+.full,
+.ghost,
+.action {
+    border-radius: 10px;
+    cursor: pointer
+}
+
+.primary {
+    min-height: 48px;
+    padding: 0 17px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: var(--gold);
+    color: #17120b;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px
+}
+
+.stats article {
+    min-height: 118px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: var(--card)
+}
+
+.stats .gold {
+    border-color: rgba(240, 179, 90, .25);
+    background: linear-gradient(145deg, rgba(240, 179, 90, .08), var(--card) 72%)
+}
+
+.stats span,
+.stats small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px
+}
+
+.stats span {
+    letter-spacing: .08em
+}
+
+.stats strong {
+    display: block;
+    font: 700 24px "Space Grotesk";
+    margin-top: 5px
+}
+
+.stats small {
+    margin-top: 3px;
+    color: #777781
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.75fr) minmax(310px, .8fr);
+    gap: 17px;
+    margin-top: 18px
+}
+
+.left,
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 17px
+}
+
+.card {
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: rgba(17, 17, 20, .88)
+}
+
+.section-title {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 19px
+}
+
+.section-title.compact {
+    align-items: center;
+    margin-bottom: 12px
+}
+
+.section-title h2,
+.card>h2 {
+    margin-top: 6px;
+    font: 600 21px "Space Grotesk"
+}
+
+.section-title p,
+.description {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.55;
+    margin-top: 7px
+}
+
+.ghost {
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 10px
+}
+
+.ghost:hover {
+    background: var(--card2);
+    color: var(--text)
+}
+
+.event {
+    display: grid;
+    grid-template-columns: 108px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 15px;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: var(--card);
+    margin-bottom: 10px
+}
+
+.event:last-child {
+    margin-bottom: 0
+}
+
+.thumb {
+    height: 76px;
+    border-radius: 9px;
+    overflow: hidden
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .82
+}
+
+.category {
+    color: var(--gold);
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em
+}
+
+.event h3 {
+    font: 600 16px "Space Grotesk";
+    margin-top: 5px
+}
+
+.meta {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 10px
+}
+
+.status {
+    padding: 5px 8px;
+    border-radius: 7px;
+    background: rgba(123, 216, 165, .07);
+    color: var(--green);
+    font-size: 8px;
+    font-weight: 700
+}
+
+.status.draft {
+    background: rgba(240, 179, 90, .08);
+    color: var(--gold)
+}
+
+.inscriptions {
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 8px
+}
+
+.inscriptions strong {
+    color: var(--text)
+}
+
+.action {
+    margin-top: 8px;
+    padding: 7px 9px;
+    background: var(--card2);
+    color: var(--text);
+    font-size: 9px
+}
+
+.section-title label {
+    min-width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: rgba(240, 179, 90, .1);
+    color: var(--gold);
+    font-size: 10px
+}
+
+.sponsor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+    margin-bottom: 9px
+}
+
+.sponsor-info {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.sponsor-avatar {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--card2);
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 700
+}
+
+.sponsor strong,
+.sponsor span {
+    display: block
+}
+
+.sponsor strong {
+    font-size: 11px
+}
+
+.sponsor span {
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 2px
+}
+
+.match {
+    padding: 5px 7px;
+    border-radius: 7px;
+    background: rgba(240, 179, 90, .1);
+    color: var(--gold);
+    font-size: 8px;
+    font-weight: 700
+}
+
+.full {
+    display: block;
+    width: 100%;
+    min-height: 40px;
+    margin-top: 13px;
+    padding: 11px;
+    border: 1px solid var(--border);
+    background: var(--card2);
+    color: var(--text);
+    font-size: 10px;
+    text-align: center
+}
+
+.reach {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    margin-top: 14px
+}
+
+.reach strong {
+    font: 700 31px "Space Grotesk"
+}
+
+.reach span {
+    color: var(--muted);
+    font-size: 10px
+}
+
+.bar {
+    height: 8px;
+    background: var(--card2);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-top: 15px
+}
+
+.bar i {
+    display: block;
+    width: 74%;
+    height: 100%;
+    background: linear-gradient(90deg, #b67a2f, var(--gold))
+}
+
+.between,
+.metrics div {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px
+}
+
+.between {
+    margin-top: 8px
+}
+
+.between strong {
+    color: var(--gold)
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 15px 0
+}
+
+.metrics {
+    display: grid;
+    gap: 10px
+}
+
+.metrics b {
+    color: var(--text)
+}
+
+.shortcuts {
+    display: grid;
+    gap: 8px;
+    margin-top: 14px
+}
+
+.shortcuts a {
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--card);
+    color: var(--muted);
+    font-size: 10px
+}
+
+.shortcuts a:hover {
+    background: var(--card2);
+    color: var(--text)
+}
+
+.activity>div {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(41, 41, 47, .7)
+}
+
+.activity>b,
+.activity>div>b {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--card);
+    color: var(--gold)
+}
+
+.activity strong,
+.activity span {
+    display: block
+}
+
+.activity strong {
+    font-size: 11px
+}
+
+.activity span {
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 9px
+}
+
+.activity em {
+    font-style: normal;
+    color: var(--muted);
+    font-size: 9px
+}
+
+.page-title {
+    padding-bottom: 28px
+}
+
+.page-title h1 {
+    font: 700 clamp(34px, 4vw, 48px) "Space Grotesk";
+    letter-spacing: -.04em;
+    margin-top: 9px
+}
+
+.page-title p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 10px
+}
+
+.page-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 17px
+}
+
+.list {
+    display: grid;
+    gap: 10px
+}
+
+.row {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card)
+}
+
+.row h3 {
+    font: 600 15px "Space Grotesk"
+}
+
+.row p,
+.row span {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.5;
+    margin-top: 6px
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px
+}
+
+.form-field {
+    margin-bottom: 14px
+}
+
+.form-field label {
+    display: block;
+    font-size: 11px;
+    color: #ddd;
+    margin-bottom: 7px
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #0f0f12;
+    color: var(--text);
+    outline: none
+}
+
+.form-field textarea {
+    min-height: 110px;
+    resize: vertical
+}
+
+.button-row {
+    display: flex;
+    gap: 10px
+}
+
+.secondary {
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--card2);
+    color: var(--text)
+}
+
+@media(max-width:1100px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .layout,
+    .page-grid {
+        grid-template-columns: 1fr
+    }
+
+    aside {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    aside .card:last-child {
+        grid-column: 1/-1
+    }
+}
+
+@media(max-width:760px) {
+    .navbar {
+        padding: 0 20px
+    }
+
+    .nav-links {
+        display: none
+    }
+
+    .profile small {
+        display: none
+    }
+
+    .main-content,
+    main {
+        width: calc(100% - 32px)
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start
+    }
+
+    .primary {
+        width: 100%;
+        justify-content: space-between
+    }
+
+    .stats,
+    aside,
+    .grid-2 {
+        grid-template-columns: 1fr
+    }
+
+    .event {
+        grid-template-columns: 84px minmax(0, 1fr)
+    }
+
+    .event>div:last-child {
+        grid-column: 2
+    }
+}
