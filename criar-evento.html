@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar novo evento - TechWorld</title>
+    <link rel="stylesheet" href="Css/empresa.css">
+</head>
+
+<body>
+    <nav class="navbar"><a class="logo" href="empresa-home.html"><span class="logo-icon">T</span>TECHWORLD</a>
+        <div class="nav-links"><a href="empresa-home.html">Início</a><a href="empresa-eventos.html">Meus eventos</a><a
+                href="empresa-patrocinadores.html">Patrocinadores</a><a href="empresa-atividade.html">Atividade</a>
+        </div>
+        <div class="profile"><button id="profileButton"><span class="avatar">TL</span><span>TechWorld
+                    Labs<br><small>Empresa</small></span> ▾</button>
+            <div id="profileMenu"><a href="empresa-perfil.html">Perfil da empresa</a><a
+                    href="empresa-configuracoes.html">Configurações</a><a href="index.html">Sair</a></div>
+        </div>
+    </nav>
+    <main>
+        <section class="page-title"><span class="eyebrow">CRIAÇÃO</span>
+            <h1>Criar novo evento</h1>
+            <p>Monte os dados básicos do seu próximo evento.</p>
+        </section>
+        <section class="card">
+            <div class="grid-2">
+                <div class="form-field"><label>Nome do evento</label><input placeholder="Ex.: TechWorld Summit"></div>
+                <div class="form-field"><label>Categoria</label><select>
+                        <option>Tecnologia</option>
+                        <option>Programação</option>
+                        <option>IA</option>
+                        <option>Startups</option>
+                    </select></div>
+            </div>
+            <div class="grid-2">
+                <div class="form-field"><label>Data</label><input type="date"></div>
+                <div class="form-field"><label>Horário</label><input type="time"></div>
+            </div>
+            <div class="form-field"><label>Local</label><input placeholder="Online ou endereço"></div>
+            <div class="form-field"><label>Descrição</label><textarea placeholder="Descreva o evento"></textarea></div>
+            <div class="button-row"><a class="primary" href="empresa-eventos.html">Salvar como rascunho</a><a
+                    class="secondary" href="empresa-home.html">Cancelar</a></div>
+        </section>
+    </main>
+    <script src="JavaScript/empresa.js"></script>
+</body>
+
+</html>
