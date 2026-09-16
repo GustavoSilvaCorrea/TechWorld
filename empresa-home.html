@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel da empresa - TechWorld</title>
+    <link rel="stylesheet" href="Css/empresa.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="logo" href="empresa-home.html"><span class="logo-icon">T</span>TECHWORLD</a>
+        <div class="nav-links">
+            <a class="active" href="empresa-home.html">Início</a>
+            <a href="empresa-eventos.html">Meus eventos</a>
+            <a href="empresa-patrocinadores.html">Patrocinadores</a>
+            <a href="empresa-atividade.html">Atividade</a>
+        </div>
+        <div class="profile"><button id="profileButton"><span class="avatar">TL</span><span>TechWorld
+                    Labs<br><small>Empresa</small></span> ▾</button>
+            <div id="profileMenu"><a href="empresa-perfil.html">Perfil da empresa</a><a
+                    href="empresa-configuracoes.html">Configurações</a><a href="index.html">Sair</a></div>
+        </div>
+    </nav>
+    <main>
+        <section class="hero">
+            <div><span class="eyebrow">PAINEL DA EMPRESA</span>
+                <h1>Olá, TechWorld Labs.</h1>
+                <p>Gerencie seus eventos, acompanhe inscrições e encontre novas oportunidades de patrocínio.</p>
+            </div>
+            <a class="primary" href="criar-evento.html">+ Criar novo evento <b>→</b></a>
+        </section>
+        <section class="stats">
+            <article><span>EVENTOS PUBLICADOS</span><strong>8</strong><small>+2 neste mês</small></article>
+            <article><span>INSCRIÇÕES</span><strong>1.284</strong><small>+18,4% na última semana</small></article>
+            <article><span>VISUALIZAÇÕES</span><strong>12,6 mil</strong><small>+9,7% no período</small></article>
+            <article class="gold"><span>PATROCÍNIOS ATIVOS</span><strong>5</strong><small>2 novas propostas</small>
+            </article>
+        </section>
+        <section class="layout">
+            <div class="left">
+                <section class="card">
+                    <div class="section-title">
+                        <div><span class="eyebrow">SEUS EVENTOS</span>
+                            <h2>Eventos criados</h2>
+                            <p>Veja os eventos publicados e acompanhe o desempenho.</p>
+                        </div><a class="ghost" href="empresa-eventos.html">Ver todos →</a>
+                    </div>
+                    <div id="eventList"></div>
+                </section>
+                <section class="card">
+                    <div class="section-title">
+                        <div><span class="eyebrow">MOVIMENTAÇÕES RECENTES</span>
+                            <h2>Atividade recente</h2>
+                        </div><small>Últimos 7 dias</small>
+                    </div>
+                    <div class="activity">
+                        <div><b>↗</b>
+                            <div><strong>+84 novas inscrições</strong><span>Hackathon TechWorld · Hoje, 14:32</span>
+                            </div><em>+12,4%</em>
+                        </div>
+                        <div><b>◆</b>
+                            <div><strong>Nova proposta de patrocínio</strong><span>Cloud Systems · Hoje, 11:08</span>
+                            </div><em>Ver</em>
+                        </div>
+                        <div><b>✓</b>
+                            <div><strong>Evento publicado com sucesso</strong><span>AI Summit 2026 · Ontem, 17:45</span>
+                            </div><em>Publicado</em>
+                        </div>
+                    </div>
+                    <a class="full" href="empresa-atividade.html">Ver atividade completa →</a>
+                </section>
+            </div>
+            <aside>
+                <section class="card">
+                    <div class="section-title compact">
+                        <div><span class="eyebrow">OPORTUNIDADES</span>
+                            <h2>Possíveis patrocinadores</h2>
+                        </div><label>4</label>
+                    </div>
+                    <p class="description">Empresas compatíveis com o perfil dos seus eventos.</p>
+                    <div id="sponsorList"></div><a class="full" href="empresa-patrocinadores.html">Ver oportunidades
+                        →</a>
+                </section>
+                <section class="card"><span class="eyebrow">DESEMPENHO</span>
+                    <h2>Seu mês</h2>
+                    <div class="reach"><strong>7.240</strong><span>pessoas alcançadas</span></div>
+                    <div class="bar"><i></i></div>
+                    <div class="between"><span>Meta mensal</span><strong>74%</strong></div>
+                    <hr>
+                    <div class="metrics">
+                        <div>Taxa de inscrição <b>10,2%</b></div>
+                        <div>Participantes confirmados <b>1.041</b></div>
+                        <div>Avaliação média <b>4,8 / 5</b></div>
+                    </div>
+                </section>
+                <section class="card"><span class="eyebrow">ATALHOS</span>
+                    <h2>Ações rápidas</h2>
+                    <div class="shortcuts"><a href="criar-evento.html">Criar evento</a><a
+                            href="empresa-patrocinadores.html">Buscar patrocinadores</a><a
+                            href="empresa-relatorios.html">Ver relatórios</a></div>
+                </section>
+            </aside>
+        </section>
+    </main>
+    <script src="JavaScript/empresa.js"></script>
+</body>
+
+</html>
